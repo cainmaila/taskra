@@ -9,6 +9,7 @@ Common traps in requirements gathering. Recognize the pattern, apply the counter
 **Signal:** User describes a solution ("I want a dashboard / notification system / API") without stating the problem.
 
 **Counter-question:**
+
 - "What decision or action would that [dashboard/system] enable that you can't do today?"
 - "What happens if we don't build that — what breaks?"
 - "Why that solution specifically? Have you tried other approaches?"
@@ -22,6 +23,7 @@ Common traps in requirements gathering. Recognize the pattern, apply the counter
 **Signal:** User enumerates 10+ features with equal weight. Every item is "important."
 
 **Counter-question:**
+
 - "If you could only ship one of these, which one delivers the most value?"
 - "Which of these would you cut if development took twice as long?"
 - "Which feature would your users notice immediately if missing?"
@@ -35,6 +37,7 @@ Common traps in requirements gathering. Recognize the pattern, apply the counter
 **Signal:** Success defined as "better UX", "faster", "more reliable", "users will love it."
 
 **Counter-question:**
+
 - "How much faster? What's the current time, and what's the target?"
 - "What metric on your dashboard would move if this worked?"
 - "In 6 months, what would you show your stakeholders as proof this succeeded?"
@@ -48,6 +51,7 @@ Common traps in requirements gathering. Recognize the pattern, apply the counter
 **Signal:** Each answer introduces new scope. Requirements keep expanding.
 
 **Intervention:**
+
 - "Let's put that in the 'v2 parking lot' and keep v1 tight."
 - "I want to capture that idea — but it's separate from the core problem. Can we add it to open questions?"
 - Explicitly create an "Out of Scope" list as you go and read it back.
@@ -61,6 +65,7 @@ Common traps in requirements gathering. Recognize the pattern, apply the counter
 **Signal:** User describes features without describing who uses them. "People want X."
 
 **Counter-question:**
+
 - "Who specifically? Can you name someone?"
 - "Have you talked to any of these users? What did they say?"
 - "Is this what users asked for, or what you think they need?"
@@ -71,11 +76,12 @@ Common traps in requirements gathering. Recognize the pattern, apply the counter
 
 ## Anti-Pattern 6: The HIPPO Problem
 
-*(Highest-Paid Person's Opinion)*
+_(Highest-Paid Person's Opinion)_
 
 **Signal:** Requirements are justified by authority ("The CEO wants this") rather than evidence.
 
 **Counter-question:**
+
 - "What user behavior or data informed that request?"
 - "What happens if users don't actually want this — what's the fallback?"
 - "Is there a way to validate this assumption cheaply before building?"
@@ -89,6 +95,7 @@ Common traps in requirements gathering. Recognize the pattern, apply the counter
 **Signal:** User wants a complete spec before any development. Treats all unknowns as knowable.
 
 **Counter-question:**
+
 - "Which parts of this are still uncertain? What would help you decide?"
 - "What's the cheapest way to test the riskiest assumption?"
 - "Can we separate what we know from what we're guessing?"
@@ -102,6 +109,7 @@ Common traps in requirements gathering. Recognize the pattern, apply the counter
 **Signal:** Requirements only describe the happy path. No error states, edge cases, or failure scenarios.
 
 **Counter-question:**
+
 - "What happens when this fails mid-process?"
 - "Who handles exceptions? How?"
 - "What's the worst realistic input this could receive?"
@@ -115,6 +123,7 @@ Common traps in requirements gathering. Recognize the pattern, apply the counter
 **Signal:** User insists there are "no constraints" or is vague about limitations.
 
 **Counter-question:**
+
 - "Who has veto power over this? What would make them veto it?"
 - "What systems does this interact with? Which ones are off-limits to change?"
 - "What has killed similar projects in the past?"
@@ -128,6 +137,7 @@ Common traps in requirements gathering. Recognize the pattern, apply the counter
 **Signal:** User agrees with everything, says everything sounds good, doesn't push back.
 
 **Intervention:**
+
 - "I want to make sure we're aligned — what would you change about what I've summarized?"
 - "Play devil's advocate: what could go wrong with this approach?"
 - "What am I missing that you haven't said yet?"
@@ -138,11 +148,11 @@ Common traps in requirements gathering. Recognize the pattern, apply the counter
 
 ## Reading the Session Health
 
-| Signal | Interpretation | Response |
-|--------|----------------|----------|
-| User uses "we" naturally | Multiple stakeholders involved | Ask who else needs to agree |
-| User hedges ("maybe", "I think", "probably") | Uncertainty or lack of ownership | Ask who has final say |
-| User answers questions with questions | Hasn't thought this through yet | Slow down, use more open questions |
-| User references a specific competitor | Has a strong mental model | Ask what they like/dislike about it |
-| Answers keep changing | Problem is still evolving | Note the instability, don't over-specify |
-| User brings up past failed attempts | High context, learned caution | Ask what specifically failed and why |
+| Signal                                       | Interpretation                   | Response                                 |
+| -------------------------------------------- | -------------------------------- | ---------------------------------------- |
+| User uses "we" naturally                     | Multiple stakeholders involved   | Ask who else needs to agree              |
+| User hedges ("maybe", "I think", "probably") | Uncertainty or lack of ownership | Ask who has final say                    |
+| User answers questions with questions        | Hasn't thought this through yet  | Slow down, use more open questions       |
+| User references a specific competitor        | Has a strong mental model        | Ask what they like/dislike about it      |
+| Answers keep changing                        | Problem is still evolving        | Note the instability, don't over-specify |
+| User brings up past failed attempts          | High context, learned caution    | Ask what specifically failed and why     |

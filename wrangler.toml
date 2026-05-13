@@ -1,0 +1,10 @@
+name = "taskra"
+compatibility_date = "2024-09-26"
+compatibility_flags = ["nodejs_compat"]
+pages_build_output_dir = ".svelte-kit/cloudflare"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "taskra-db"
+database_id = "REPLACE_AFTER_wrangler_d1_create"
+migrations_dir = "drizzle/migrations"

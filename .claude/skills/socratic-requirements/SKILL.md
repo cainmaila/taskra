@@ -1,5 +1,5 @@
 ---
-name: Socratic Requirements
+name: socratic-requirements
 description: This skill should be used when the user says "help me brainstorm", "I want to build something but don't know where to start", "收集需求", "腦力激盪", "幫我想清楚", "I have an idea", "釐清需求", "我想做一個...", "我有個想法", "幫我分析需求", "需求訪談", "產品規劃", or when the user presents a vague concept that needs to be refined into concrete requirements through dialogue.
 version: 0.1.0
 ---
@@ -19,6 +19,7 @@ Work through layers progressively. Use `AskUserQuestion` at each pivot point to 
 ### Layer 1 — Context & Motivation (Why this, why now?)
 
 Open with broad context questions to understand the trigger:
+
 - What situation prompted this idea?
 - What's the cost of NOT solving this?
 - Who is affected, and how often?
@@ -26,6 +27,7 @@ Open with broad context questions to understand the trigger:
 ### Layer 2 — Problem Definition (What is actually broken?)
 
 Narrow from idea to problem:
+
 - What does the current experience look like (even without the solution)?
 - Where does the most friction occur today?
 - What have you already tried, and why did it fall short?
@@ -33,6 +35,7 @@ Narrow from idea to problem:
 ### Layer 3 — Constraints & Context (What limits the solution space?)
 
 Expose non-obvious constraints:
+
 - Time, budget, team size limitations?
 - Technical debt or legacy systems involved?
 - Stakeholder or compliance requirements?
@@ -41,6 +44,7 @@ Expose non-obvious constraints:
 ### Layer 4 — Success Criteria (What does "done" look like?)
 
 Define measurable outcomes:
+
 - How will you know this succeeded in 3 months?
 - What's the minimum version that delivers value?
 - What features would you cut if forced to ship in half the time?
@@ -48,6 +52,7 @@ Define measurable outcomes:
 ### Layer 5 — Prioritization (What matters most?)
 
 When multiple valid directions emerge, use `AskUserQuestion` with concrete options to force ranking:
+
 - Present 2-4 options derived from the conversation
 - Ask the user to pick or rank
 - Use their choice to collapse the requirement space
@@ -59,6 +64,7 @@ When multiple valid directions emerge, use `AskUserQuestion` with concrete optio
 Begin with a single open question — never a list. The first response reveals user vocabulary, mental model, and depth of thinking.
 
 **Opening prompt pattern:**
+
 ```
 Tell me about the problem you're trying to solve. What's the situation that made you think this is needed?
 ```
@@ -68,6 +74,7 @@ Wait for the answer before forming the next question.
 ### Progressive Deepening
 
 Each user response should trigger one of three actions:
+
 1. **Clarify** — the answer introduced ambiguity ("when you say X, do you mean A or B?")
 2. **Deepen** — the answer is clear but shallow ("why is that important?")
 3. **Pivot** — enough depth on this thread, move to next layer
@@ -77,12 +84,14 @@ Each user response should trigger one of three actions:
 When the conversation reaches a fork — multiple valid interpretations or directions — stop and present choices instead of asking open-ended questions. This prevents decision fatigue and creates explicit commitment.
 
 **When to use AskUserQuestion:**
+
 - After Layer 3, when multiple solution archetypes are visible
 - When the user can't articulate a preference verbally
 - To force prioritization between competing requirements
 - To confirm your synthesis before writing the document
 
 **Example decision point — scope:**
+
 ```
 AskUserQuestion({
   question: "Based on what you've described, what's the primary focus?",
@@ -95,6 +104,7 @@ AskUserQuestion({
 ```
 
 **Example decision point — MVP boundary:**
+
 ```
 AskUserQuestion({
   question: "Which feature set defines your MVP?",
@@ -109,6 +119,7 @@ AskUserQuestion({
 ### Recognizing Completion
 
 The session is complete when:
+
 - The user can describe their problem without the solution
 - Success criteria are specific and measurable
 - The top 3 constraints are identified
@@ -124,8 +135,8 @@ After completing the dialogue, generate a structured Markdown document. Store it
 ```markdown
 # [Topic] Requirements
 
-**Date:** [YYYY-MM-DD]  
-**Status:** Draft  
+**Date:** [YYYY-MM-DD]
+**Status:** Draft
 **Session type:** Socratic requirements gathering
 
 ---
@@ -143,11 +154,11 @@ After completing the dialogue, generate a structured Markdown document. Store it
 
 ## Constraints
 
-| Constraint | Detail |
-|------------|--------|
-| Time | [deadline or pressure] |
-| Team | [who is building this?] |
-| Technical | [existing systems, legacy debt] |
+| Constraint | Detail                          |
+| ---------- | ------------------------------- |
+| Time       | [deadline or pressure]          |
+| Team       | [who is building this?]         |
+| Technical  | [existing systems, legacy debt] |
 | Compliance | [any legal/policy requirements] |
 
 ## Success Criteria
@@ -159,18 +170,20 @@ After completing the dialogue, generate a structured Markdown document. Store it
 ## MVP Scope
 
 ### In Scope
+
 - [Feature/capability 1]
 - [Feature/capability 2]
 
 ### Out of Scope (this version)
+
 - [Excluded item 1 — why]
 - [Excluded item 2 — why]
 
 ## Key Decisions Made
 
-| Decision | Choice | Rationale |
-|----------|--------|-----------|
-| [Decision point] | [What was chosen] | [Why] |
+| Decision         | Choice            | Rationale |
+| ---------------- | ----------------- | --------- |
+| [Decision point] | [What was chosen] | [Why]     |
 
 ## Open Questions
 
@@ -197,7 +210,7 @@ After completing the dialogue, generate a structured Markdown document. Store it
 ## Session Length Guidance
 
 - **Simple scope** (single feature, clear domain): 5–8 exchanges
-- **Medium scope** (new product area, multiple stakeholders): 10–15 exchanges  
+- **Medium scope** (new product area, multiple stakeholders): 10–15 exchanges
 - **Complex scope** (strategic initiative, unclear problem): 15–25 exchanges, may need multiple sessions
 
 If after 5 exchanges the user is still describing symptoms without a clear problem statement, explicitly name this: "We're still in the symptom space — let's find the root cause."

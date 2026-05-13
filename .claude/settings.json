@@ -1,12 +1,11 @@
 {
-  "permissions": {
-    "allow": [
-      "Edit(/.claude/skills/socratic-requirements/**)",
-      "Bash(chmod +x /Users/cain/github/taskra/.claude/skills/socratic-requirements/scripts/generate-doc.sh)",
-      "Bash(mkdir -p /Users/cain/github/taskra/docs/requirements)"
-    ],
-    "additionalDirectories": [
-      "/Users/cain/github/taskra/docs"
-    ]
-  }
+	"permissions": {
+		"allow": [
+			"Edit(/.claude/skills/socratic-requirements/**)",
+			"Bash(chmod +x /Users/cain/github/taskra/.claude/skills/socratic-requirements/scripts/generate-doc.sh)",
+			"Bash(mkdir -p /Users/cain/github/taskra/docs/requirements)",
+			"Bash(pnpm test:e2e)"
+		],
+		"additionalDirectories": ["/Users/cain/github/taskra/docs"]
+	}
 }
