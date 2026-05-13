@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { afterNavigate } from '$app/navigation';
 	import { page } from '$app/state';
 	import { taskStore } from '$lib/stores/tasks.svelte';
 	import { memberStore } from '$lib/stores/members.svelte';
@@ -7,7 +8,7 @@
 	import type { TaskWithRelations } from '$lib/types';
 	import TaskRow from '$lib/components/tasks/TaskRow.svelte';
 	import TaskModal from '$lib/components/tasks/TaskModal.svelte';
-	import { onMount, untrack } from 'svelte';
+	import { onMount } from 'svelte';
 	import { browser } from '$app/environment';
 
 	const LS_KEY = 'taskra:my_tasks_member';
@@ -50,11 +51,8 @@
 		}
 	});
 
-	$effect(() => {
-		const params = projectId ? { project_id: projectId } : { my_tasks: true };
-		untrack(() => {
-			void taskStore.load(params);
-		});
+	afterNavigate(() => {
+		void taskStore.load(projectId ? { project_id: projectId } : { my_tasks: true });
 	});
 </script>
 
