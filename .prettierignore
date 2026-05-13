@@ -9,3 +9,7 @@ bun.lockb
 /static/
 .agents/
 .playwright-mcp/
+.claude/skills/cloudflare/
+.claude/skills/design-ui-designer/
+.claude/skills/design-ux-architect/
+.claude/skills/design-ux-researcher/
