@@ -93,7 +93,7 @@
 	aria-modal="true"
 	aria-label="{mode === 'edit' ? 'Edit' : 'Create'} Task"
 >
-	<div class="max-h-[90vh] w-full max-w-lg overflow-y-auto card p-6 shadow-xl">
+	<div class="max-h-[90vh] w-full max-w-lg overflow-y-auto card bg-surface-50 dark:bg-surface-900 p-6 shadow-xl">
 		<div class="mb-4 flex items-center justify-between">
 			<h2 class="h4">{mode === 'edit' ? 'Edit Task' : 'New Task'}</h2>
 			<button
